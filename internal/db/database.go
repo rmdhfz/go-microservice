@@ -18,8 +18,9 @@ func CreateDatabase() (*sql.DB, error) {
 	password := ""
 	dbName := "go"
 
-	connectionString := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&collation=utf8mb4_unicode_ci&parseTime=true&multiStatements=true", user, password, serverName, dbName)
-	db, err := sql.Open("mysql", connectionString)
+	// connectionString := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&collation=utf8mb4_unicode_ci&parseTime=true&multiStatements=true", user, password, serverName, dbName)
+	// db, err := sql.Open("mysql", connectionString)
+	db, err := sql.Open("mysql", "root:@tcp(127.0.0.1:3306)/go")
 	if err != nil {
 		return nil, err
 	}
